@@ -47,13 +47,9 @@ void remover(void *end) {
 void alterar_contagem(void *end, int x) {
     Contagem *node = buscar(end);
     if (node != NULL) {
-        if (x > 0) {
-            node->cont += x;
-        } else {
-            node->cont += x;
-            if (node->cont < 1) {
-                remover(end);
-            }
+        node->cont += x;
+        if (node->cont < 1) {
+            remover(end);
         }
     }
 }
